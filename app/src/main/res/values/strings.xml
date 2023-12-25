@@ -2,4 +2,9 @@
     <string name="app_name">NewsApplication</string>
     <string name="splash_activity">image for splash activity</string>
     <string name="news">Новости</string>
+    <string name="search_image_button_description">button to start search</string>
+    <string name="enter_request">Введите запрос</string>
+    <string name="search_results">Результаты поиска:</string>
+    <string name="failed_result">К сожалению, по вашему запросу ничего не найдено.</string>
+    <string name="in_favourites">В избранных:</string>
 </resources>

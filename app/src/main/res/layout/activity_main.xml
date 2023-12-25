@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grayish_orange">
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="0dp"
+        android:layout_height="66dp"
+        android:paddingTop="18dp"
+        android:text="@string/news"
+        android:textAlignment="center"
+        android:textColor="@color/dark_blue"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/searchField"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleTextView">
+
+        <EditText
+            android:id="@+id/searchEditText"
+            android:layout_width="273dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:autofillHints=""
+            android:background="@drawable/searchedittextfield"
+            android:hint="@string/enter_request"
+            android:inputType="text"
+            android:padding="20dp"
+            android:textColor="@color/dark_blue"
+            android:textSize="16sp" />
+
+        <ImageButton
+            android:id="@+id/searchImageButton"
+            android:layout_width="67dp"
+            android:layout_height="66dp"
+            android:backgroundTint="#00FFFFFF"
+            android:contentDescription="@string/search_image_button_description"
+            app:srcCompat="@drawable/searchimagebutton"
+            tools:ignore="RedundantDescriptionCheck" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/h2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:clickable="false"
+        android:padding="10dp"
+        android:text="@string/search_results"
+        android:textColor="@color/dark_blue"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.093"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchField" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/newsRecyclerView"
+        android:layout_width="405dp"
+        android:layout_height="392dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/h2" />
+
+    <!-- Auto layout, variables, and unit scale are not yet supported -->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
