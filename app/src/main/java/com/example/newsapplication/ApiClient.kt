@@ -1,23 +1,16 @@
 package com.example.newsapplication
 
-import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class ApiClient {
+object NewsApiClient {
+    private const val BASE_URL = "https://newsdata.io/api/1/"
 
-    private val okHttpClient = OkHttpClient.Builder()
-        .addInterceptor(HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BODY })
-        .build()
-
-    private val retrofit = Retrofit.Builder()
-        .baseUrl("https://newsdata.io/api/1/")
-        .client(okHttpClient)
-        .addConverterFactory(GsonConverterFactory.create())
-        .build()
-
-    val newsApiService: NewsApiService? = retrofit.create(NewsApiService::class.java)
-
-
+    val apiService: NewsApiService by lazy {
+        Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(NewsApiService::class.java)
+    }
 }
